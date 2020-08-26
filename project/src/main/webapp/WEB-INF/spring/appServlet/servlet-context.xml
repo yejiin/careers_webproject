@@ -32,6 +32,7 @@
 		base-package="reviewboard" />
 	<context:component-scan
 		base-package="com.multi.webproject.user" />
+	<context:component-scan base-package="com.multi.controller" />
 
 	<beans:bean id="AuthenticationInterceptor"
 		class="com.multi.webproject.interceptor.AuthenticationInterceptor">
