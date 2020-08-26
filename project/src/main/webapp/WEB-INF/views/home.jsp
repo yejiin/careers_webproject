@@ -12,7 +12,7 @@
         <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/webproject/">채용공고</a>
+        <a class="nav-link" href="/webproject/board/list">채용공고</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/webproject/rvboardlist">면접후기</a>
