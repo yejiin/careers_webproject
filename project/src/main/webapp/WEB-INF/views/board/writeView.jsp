@@ -3,11 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">	
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	<title>게시판</title>
 	</head>
@@ -19,7 +15,7 @@
 				if(fn_valiChk()){
 					return false;
 				}
-				formObj.attr("action", "/board/write");
+				formObj.attr("action", "/webproject/board/write");
 				formObj.attr("method", "post");
 				formObj.submit();
 			});
@@ -49,7 +45,7 @@
 			<hr />
 			
 			<section id="container">
-				<form name="writeForm" method="post" action="/board/write">
+				<form name="writeForm" method="post" action="/webproject/board/write">
 					<table>
 						<tbody>
 							<tr>

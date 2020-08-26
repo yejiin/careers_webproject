@@ -5,7 +5,7 @@
 </style>
 
 <ul>
-	<li><a href="/board/list">목록</a></li>
-	<li><a href="/board/writeView">글 작성</a></li>
+	<li><a href="/webproject/board/list">목록</a></li>
+	<li><a href="/webproject/board/writeView">글 작성</a></li>
 	<li><a href="">로그인</a></li>
 </ul>

@@ -3,11 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 	<head>
-		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	 	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
 	 	<title>게시판</title>
@@ -20,7 +16,7 @@
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
-				formObj.attr("action", "/board/updateView");
+				formObj.attr("action", "/webproject/board/updateView");
 				formObj.attr("method", "get");
 				formObj.submit();				
 			})
@@ -31,7 +27,7 @@
 				var deleteYN = confirm("삭제하시겠습니까?");
 				if(deleteYN == true){
 					
-				formObj.attr("action", "/board/delete");
+				formObj.attr("action", "/webproject/board/delete");
 				formObj.attr("method", "post");
 				formObj.submit();
 					
@@ -48,13 +44,13 @@
 			
 			$(".replyWriteBtn").on("click", function(){
 				var formObj = $("form[name='replyForm']");
-				formObj.attr("action", "/board/replyWrite");
+				formObj.attr("action", "/webproject/board/replyWrite");
 				formObj.submit();
 			});
 			
 			//댓글 수정 View
 			$(".replyUpdateBtn").on("click", function(){
-				location.href = "/board/replyUpdateView?bno=${read.bno}"
+				location.href = "/webproject/board/replyUpdateView?bno=${read.bno}"
 								+ "&page=${scri.page}"
 								+ "&perPageNum=${scri.perPageNum}"
 								+ "&searchType=${scri.searchType}"
@@ -64,7 +60,7 @@
 			
 			//댓글 삭제 View
 			$(".replyDeleteBtn").on("click", function(){
-				location.href = "/board/replyDeleteView?bno=${read.bno}"
+				location.href = "/webproject/board/replyDeleteView?bno=${read.bno}"
 					+ "&page=${scri.page}"
 					+ "&perPageNum=${scri.perPageNum}"
 					+ "&searchType=${scri.searchType}"

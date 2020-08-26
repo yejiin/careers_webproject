@@ -3,11 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 	<head>
-	<!-- 합쳐지고 최소화된 최신 CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!-- 부가적인 테마 -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	<title>게시판</title>
 	</head>
@@ -18,7 +14,7 @@
 			
 			$(".cancel_btn").on("click", function(){
 				event.preventDefault();
-				location.href = "/board/readView?bno=${update.bno}"
+				location.href = "/webproject/board/readView?bno=${update.bno}"
 					   + "&page=${scri.page}"
 					   + "&perPageNum=${scri.perPageNum}"
 					   + "&searchType=${scri.searchType}"
@@ -29,7 +25,7 @@
 				if(fn_valiChk()){
 					return false;
 				}
-				formObj.attr("action", "/board/update");
+				formObj.attr("action", "/webproject/board/update");
 				formObj.attr("method", "post");
 				formObj.submit();
 				
@@ -62,7 +58,7 @@
 			<hr />
 			
 			<section id="container">
-				<form name="updateForm" role="form" method="post" action="/board/update">
+				<form name="updateForm" role="form" method="post" action="/webproject/board/update">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
 					<table>
 						<tbody>
