@@ -16,7 +16,10 @@ insert into board values((select max(seq))+1,?,?,?,sysdate,?,0)
 <form action="/webproject/rvboardwrite" method="post">
 	제목<input type=text name="title"> <br>
 	내용<textarea name="contents" rows=5 cols=50></textarea><br>
-	작성자<input type=text name="writer"> <br>
+	<div class="form-grop" hidden>
+	작성자<input type=text name="writer" value="${login.userid}" readonly > <br>
+
+	</div>
 	<input type=submit value="글쓰기 완료">
 </form>
 </body>

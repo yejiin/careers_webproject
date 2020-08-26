@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">김유진닷컴</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +22,17 @@
         <a class="nav-link" href="/webproject/">내 관심공고</a>
       </li>
     </ul>
-     <form class="form-inline my-2 my-lg-0">
-     <a class="btn btn-outline-success" href="/webproject/user" role="button">로그인</a>
-    </form>
+    <form class="form-inline my-2 my-lg-0">
+				<c:if test="${login.userid == null }">
+					<a class="btn btn-outline-success" href="/webproject/login"
+						role="button">로그인</a>
+				</c:if>
+				<c:if test="${login.userid != null }">
+					<div>${login.userid }님 환영합니다.&nbsp &nbsp</div>
+					<a class="btn btn-outline-success" href="/webproject/logout"
+						role="button">로그아웃</a>
+				</c:if>
+		</form>
   </div>
 </nav>
 <!doctype html>

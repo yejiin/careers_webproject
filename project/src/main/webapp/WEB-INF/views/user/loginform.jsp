@@ -16,7 +16,7 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<title>로그인</title>
 <script src="/webproject/resources/jquery-3.2.1.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -95,11 +95,10 @@
 		if (msg != null && msg.equals("1")) {
 			response.sendRedirect("../webproject/");
 		} else if (msg != null && msg.equals("0")) {
-			out.println("<br>");
-			out.println("<font color='red' size='5'>비밀번호를 확인해 주세요.</font>");
+			out.println("<script>alert('비밀번호를 확인해 주세요.');</script>");
+			
 		} else if (msg != null && msg.equals("-1")) {
-			out.println("<br>");
-			out.println("<font color='red' size='5'>아이디를 확인해 주세요.</font>");
+			out.println("<script>alert('아이디를 확인해 주세요.');</script>");
 		}
 	%>
 

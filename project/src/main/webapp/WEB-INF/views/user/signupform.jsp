@@ -22,29 +22,33 @@
 <script
 	src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script src="/webproject/resources/jquery-3.2.1.min.js"></script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
 		$("#signupbtn").on('click', function() {
 			if (!$("#id").val()) {
 				alert("아이디를 입력하세요.");
 				$("#id").focus();
 				return false;
-			} else if (!$("#name").val()) {
-				alert("이름을 입력하세요.");
-				$("#name").focus();
-				return false;
 			} else if (!$("#pw").val()) {
 				alert("비밀번호를 입력하세요.");
 				$("#pw").focus();
-				return false();
+				return false;
 			} else if ($("#pw").val() != $("#ckpw").val()) {
 				alert("비밀번호가 일치하지 않습니다.")
 				$("#ckpw").focus();
 				return false;
+			} else if (!$("#name").val()) {
+				alert("이름을 입력하세요.");
+				$("#name").focus();
+				return false;
+			}else if (!$("#birth").val()) {
+				alert("생년월일을 입력하세요.");
+				$("#birth").focus();
+				return false;
 			}
 		});
 	});
-</script> -->
+</script>
 </head>
 
 <body>
@@ -91,16 +95,15 @@
 				<div class="form-group" id="divName">
 					<label for="inputName" class="col-lg-2 control-label">생년월일</label>
 					<div class="col-lg-10">
-						<input type="text" name=userbirth class="form-control onlyHangul"
-							data-rule-required="true" placeholder="생년월일(yymmdd)."
+						<input type="text" name=userbirth id="birth" class="form-control onlyNumber"
+							data-rule-required="true" placeholder="생년월일(yymmdd)"
 							maxlength="15">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
-						<button type="submit" id="signupbtn" class="btn btn-primary">Sign
-							in</button>
+						<button type="submit" id="signupbtn" class="btn btn-primary">Sign up</button>
 					</div>
 				</div>
 			</div>
@@ -140,7 +143,7 @@
 
 				var divId = $('#divId');
 
-				if ($('#id').val() == "") {
+				if ($('#id').val()=="") {
 					divId.removeClass("has-success");
 					divId.addClass("has-error");
 				} else {
@@ -191,10 +194,8 @@
 			}); 
 
 			//------- validation 검사
-			$("form").submit(
+		/* 	$("#signupbtn").click(
 					function(event) {
-
-				
 						var divId = $('#divId');
 						var divPassword = $('#divPassword');
 						var divPasswordCheck = $('#divPasswordCheck');
@@ -274,7 +275,7 @@
 						}
 
 						
-					});
+					}); */
 
 		}); 
 	</script> 

@@ -77,7 +77,7 @@ public class UserController {
 	  @RequestMapping(value="logout") 
 	  public String logout(HttpSession session) {
 		  session.invalidate(); 
-		  return "redirect:/login";
+		  return "redirect:/";
 	  }
 	 
 

@@ -22,8 +22,13 @@ $(document).ready(function(){
 </c:forEach>
 </table>
 
-<a href="/webproject/rvboardwrite">글쓰기 </a>로 이동
+<c:if test="${not empty login }">
 <input type="button" value="글쓰기" id="btn">
+</c:if>
+
+<c:if test="${empty login }">
+ <i class="fa fa-edit"></i> 로그인 한 사용자만 글쓰기가 가능합니다.
+</c:if>
 
 </body>
 </html>

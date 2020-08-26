@@ -62,10 +62,7 @@ public class UserDAO {
 			if (rs.next()) {
 				dbPW = rs.getString("userpw");
 				if(dbPW.equals(pw)) {
-		
 					x=1;
-					session.setAttribute("userid", id);
-					session.setAttribute("userpw", pw);
 				}
 				else
 					x=0;   
