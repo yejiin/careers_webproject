@@ -10,11 +10,11 @@
 $(document).ready(function(){
 
 	$("#updatebtn").on('click', function(){
-		location.href="/mymvc/boardupdate?pw="+$("#pw").val();
+		location.href="/webproject/rvboardupdate?rseq="+${rv_board.rseq};
 	});
 	
 	$("#deletebtn").on('click', function(){
-		location.href="/mymvc/boarddelete";
+		location.href="/webproject/rvboarddelete?rseq="+${rv_board.rseq};
 	});
 });
 </script>
@@ -33,7 +33,6 @@ td {border:2px solid green;}
 	<tr><td>조회 수 </td><td>${rv_board.viewcnt}</td></tr>
 </table>
 
-글 암호 입력 : <input type=password id="pw">
 <input type=button id="updatebtn" value="수정">
 <input type=button id="deletebtn" value="삭제">
 

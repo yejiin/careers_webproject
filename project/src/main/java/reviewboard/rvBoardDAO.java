@@ -98,4 +98,40 @@ public class rvBoardDAO {
 		}
 		return vo;
 	} // getBoard end
+	void updateBoard(rvBoardVO vo) {
+		try {
+			String sql ="UPDATE rv_board SET title=?, contents=?, regdate=sysdate WHERE rseq=?";
+//			String sql = "update INTO RV_BOARD(RSEQ, TITLE, CONTENTS, WRITER) VALUES ((SELECT NVL(MAX(RSEQ),0)+1 from RV_BOARD), ?, ?, ?)";
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system","oracle"); // 연결 
+			PreparedStatement pt = con.prepareStatement(sql);
+			// 2-3. Setter 값 설정
+			pt.setString(1, vo.getTitle());
+			pt.setString(2, vo.getContents());
+			pt.setInt(3, vo.getRseq());
+			
+			pt.executeUpdate();
+			pt.close();
+			con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	void deleteBoard(int rseq) {
+		try {
+			String sql = "DELETE FROM RV_BOARD WHERE RSEQ=?";
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.231.106:1521:xe", "system","oracle"); // 연결 
+			PreparedStatement pt = con.prepareStatement(sql);
+			pt.setInt(1, rseq);
+			// 2-4. DB 전송 
+			pt.executeUpdate();
+			
+			pt.close();
+			con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	} // DeleteBoard end
 }

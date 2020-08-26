@@ -44,4 +44,25 @@ public class rvBoardController {
 		mv.setViewName("rvboard/detail");
 		return mv;	
 	}
+	@RequestMapping(value="/rvboardupdate", method=RequestMethod.GET)
+	public ModelAndView updateBoard(int rseq) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("rseq",rseq);
+		mv.setViewName("rvboard/updateform");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/rvboardupdate", method=RequestMethod.POST)
+	public String updateBoardSuccess(@ModelAttribute("vo") rvBoardVO vo) {
+
+		dao.updateBoard(vo);
+		return "redirect:/rvboardlist";
+	}
+	
+	@RequestMapping(value="/rvboarddelete")
+	public String deleteBoard(int rseq) {
+		dao.deleteBoard(rseq);
+		return "redirect:/rvboardlist";
+	}
 }
