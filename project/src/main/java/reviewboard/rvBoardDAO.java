@@ -16,7 +16,7 @@ public class rvBoardDAO {
 		try {
 			String sql = "INSERT INTO RV_BOARD(RSEQ, TITLE, CONTENTS, WRITER) VALUES ((SELECT NVL(MAX(RSEQ),0)+1 from RV_BOARD), ?, ?, ?)";
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system","oracle"); // 연결 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system","oracle"); // 연결 
 			PreparedStatement pt = con.prepareStatement(sql);
 			// 2-3. Setter 값 설정
 			pt.setString(1, vo.getTitle());
@@ -46,7 +46,7 @@ public class rvBoardDAO {
 		//2-2. PreparedStatement 정의
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection
-		("jdbc:oracle:thin:@localhost:1521:xe", "system", "oracle");
+		("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system", "oracle");
 		PreparedStatement pt = con.prepareStatement(sql);
 		//2-4. db 전송
 		ResultSet rs = pt.executeQuery();
@@ -73,7 +73,7 @@ public class rvBoardDAO {
 			String sql2 = "update rv_board set viewcnt = viewcnt+1 where rseq=?";
 
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.231.106:1521:xe", "system","oracle"); // 연결 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system","oracle"); // 연결 
 			PreparedStatement pt = con.prepareStatement(sql);
 			PreparedStatement pt2 = con.prepareStatement(sql2);
 			
@@ -103,7 +103,7 @@ public class rvBoardDAO {
 			String sql ="UPDATE rv_board SET title=?, contents=?, regdate=sysdate WHERE rseq=?";
 //			String sql = "update INTO RV_BOARD(RSEQ, TITLE, CONTENTS, WRITER) VALUES ((SELECT NVL(MAX(RSEQ),0)+1 from RV_BOARD), ?, ?, ?)";
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system","oracle"); // 연결 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system","oracle"); // 연결 
 			PreparedStatement pt = con.prepareStatement(sql);
 			// 2-3. Setter 값 설정
 			pt.setString(1, vo.getTitle());
@@ -122,7 +122,7 @@ public class rvBoardDAO {
 		try {
 			String sql = "DELETE FROM RV_BOARD WHERE RSEQ=?";
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // oracle driver 호출 
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.231.106:1521:xe", "system","oracle"); // 연결 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system","oracle"); // 연결 
 			PreparedStatement pt = con.prepareStatement(sql);
 			pt.setInt(1, rseq);
 			// 2-4. DB 전송 

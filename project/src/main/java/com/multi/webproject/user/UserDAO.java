@@ -22,7 +22,7 @@ public class UserDAO {
 		String result = "";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.231.106:1521:xe", "system", "oracle");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system", "oracle");
 			PreparedStatement pt = con.prepareStatement(USER_INSERT);
 			
 			pt.setString(1, vo.getUserid());
@@ -50,7 +50,7 @@ public class UserDAO {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.231.106:1521:xe", "system", "oracle");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.219.179:1521:xe", "system", "oracle");
 			PreparedStatement pstmt = con.prepareStatement(LOGIN_CHECK);
 	
 			pstmt.setString(1, id);
